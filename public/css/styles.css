@@ -1,0 +1,16 @@
+body{
+  background-color: grey;
+}
+
+.center {
+  display:inline-block;
+  text-align: center;
+
+  border: 3px solid green;
+}
+
+.center-div
+{
+     margin: 0 auto;
+     width: 80%;
+}
