@@ -38,6 +38,10 @@ app.get("/submit", function(req, res){
   res.render("submit");
 });
 
+app.get("/example", function(req, res){
+  res.render("example");
+});
+
 app.get("/posts/:postID", function(req, res){
   const requestedPostId = req.params.postId;
 });

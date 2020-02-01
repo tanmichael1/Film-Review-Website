@@ -1,5 +1,5 @@
 body{
-  background-color: grey;
+  background-color: white;
 }
 
 .center {
@@ -13,4 +13,11 @@ body{
 {
      margin: 0 auto;
      width: 80%;
+}
+
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

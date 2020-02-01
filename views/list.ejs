@@ -4,4 +4,62 @@
   </h1>
 
 
+    <div class="container">
+  <h2>Filterable Table</h2>
+  <p>Use the search bar to filter the table by film names, directors, actors, genres, etc:</p>
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Film Name</th>
+        <th>Director</th>
+        <th>Actors</th>
+        <th>Genre</th>
+        <th>Review Date</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td><a href="/example">John Wick</a></td>
+        <td>Chad Stahelski, David Leitch</td>
+        <td>Keanu Reeves, Michael Nyqvist, Alfie Allen, Willem Dafoe</td>
+        <td>Action, Crime, Thriller</td>
+        <td>March 7, 2017</td>
+      </tr>
+      <tr>
+        <td>John Wick Chapter 2</td>
+        <td>Chad Stahelski</td>
+        <td>Keanu Reeves, Riccardo Scamarcio, Common, Laurence Fishburne, Ruby Rose, John Leguizamo, Ian McShane</td>
+        <td>Action, Crime, Thriller</td>
+        <td>May 23, 2017</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@greatstuff.com</td>
+      </tr>
+      <tr>
+        <td>Anja</td>
+        <td>Ravendale</td>
+        <td>a_r@test.com</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
 <%- include("partials/footer"); -%>
