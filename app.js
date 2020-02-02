@@ -15,8 +15,26 @@ app.use(express.static("public"));
 
 const postSchema = {
   title: String,
-  content: String
+  year: String,
+  director: String,
+  actors: String,
+  plot: String,
+  reviewDate: String,
+  review: String,
+  postImg: String,
+  feedImg: String
 };
+
+// Store:
+// Film name
+// Year
+// director
+// actors
+//Plot
+//Review Date
+// REVIEW:
+// Post Image
+// Feed Image
 
 
 
@@ -51,20 +69,13 @@ app.get("/example", function(req, res){
 });
 
 app.get("/posts/:postID", function(req, res){
-  const requestedPostId = req.params.postId;
+  const requestedPostId = req.params.postID;
+  res.render(requestedPostId);
+  console.log(requestedPostId);
 });
 
 
-// Store:
-// Film name
-// Year
-// director
-// actors
-//Plot
-//Review Date
-// REVIEW:
-// Post Image
-// Feed Image
+
 
 
 
