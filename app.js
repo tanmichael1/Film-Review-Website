@@ -38,13 +38,36 @@ app.get("/submit", function(req, res){
   res.render("submit");
 });
 
+app.get("/latest", function(req, res){
+  res.render("latest");
+});
+
+app.get("/contact", function(req, res){
+  res.render("contact");
+});
+
 app.get("/example", function(req, res){
-  res.render("example");
+  res.render("example", {filmTitle: "John Wick"});
 });
 
 app.get("/posts/:postID", function(req, res){
   const requestedPostId = req.params.postId;
 });
+
+
+// Store:
+// Film name
+// Year
+// director
+// actors
+//Plot
+//Review Date
+// REVIEW:
+// Post Image
+// Feed Image
+
+
+
 
 app.listen(3000, function(){
   console.log("Server is running on port 3000");

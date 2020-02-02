@@ -1,16 +1,22 @@
 <%- include("partials/header"); -%>
 <div class="center-div">
 
+Title: <%=filmTitle %>
 
-
-  <h1>John Wick</h1>
+  <h1>John Wick (2014) Movie Review</h1>
   <img class="center-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcShZc1mEcrTH0pNS0NDvAlrnJbSw0srNY3FLT1T-QviKVX76ZJ_" alt="">
-  Director:
+  <b>Director:</b> Chad Stahelski, David Leitch
   <br>
-  Year: 2014
-<br>
-  Review Date:
-<br><br>
+  <b>Year:</b> 2014
+  <br>
+  <b>Cast:</b> Keanu Reeves, Michael Nyqvist, Alfie Allen, Willem Dafoe
+  <br>
+  <b>Review Date:</b> March 7, 2017
+  <br>
+  <b>Plot:</b> After the sudden death of his beloved wife, John Wick (Keanu Reeves) receives one last gift from her, a beagle puppy named Daisy, and a note imploring him not to forget how to love. But John’s mourning is interrupted when his 1969 Boss Mustang catches the eye of sadistic thug Iosef Tarasov (Alfie Allen) who breaks into his house and steals it, beating John unconscious and leaving Daisy dead. Unwittingly, they have just reawakened one of the most brutal assassins the underworld has ever seen.
+
+
+  <br><br>
 
 
   <p>With the sequel coming sometime soon, I thought I should give my thoughts on the original John Wick. John Wick was one of the most surprising movies of 2014. It wasn’t just a standard Keanu Reeves action flick, it was actually something special,
@@ -38,7 +44,59 @@
     haven’t already, definitely see John Wick when you can, especially before seeing the sequel which comes out (or already came out depending where you are in the world).
     <br /> <br />
 
-    <!--Facebook-->
+
+
+    <!-- Comment section -->
+    <!-------------------Reply Section------->
+    <div id="second">
+      <div class="row">
+        <div class="col-md-2">
+          <h3 class="second_heading"><b>Leave a Reply</b></h3>
+        </div>
+        <div class="col-md-10">
+          <div class="blank"></div>
+        </div>
+      </div>
+    </div>
+    <div id="middle">
+      <form>
+
+      </form>
+    </div>
+
+    <!------------Form Start---------->
+
+    <div id='form'>
+      <div class="row">
+        <div class="col-md-12">
+
+          <form action="" method="POST" id="commentform">
+
+            <div id="comment-name" class="form-row">
+              <input type="text" placeholder="Name (required)" name="dname" id="name">
+            </div>
+            <div id="comment-email" class="form-row">
+              <input type="text" placeholder="Mail (will not be published) (required)" name="demail" id="email">
+            </div>
+            <div id="comment-url" class="form-row">
+              <input type="text" placeholder="Website" name="url" id="url">
+            </div>
+            <div id="comment-message" class="form-row">
+              <textarea name="comment" placeholder="Message" id="comment"></textarea>
+            </div>
+            <a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Comment"></a>
+            <input style="width: 30px" type="checkbox" value="1" name="subscribe" id="subscribe" checked="checked">
+            <p1><b>Notify me when new comments are added.</b></p1>
+          </form>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<!--Facebook-->
 <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
 <!--Twitter-->
 <a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
@@ -70,7 +128,7 @@
 <a class="btn-floating btn-lg btn-reddit" type="button" role="button"><i class="fab fa-reddit-alien"></i></a>
 <!--WhatsApp-->
 <a class="btn-floating btn-lg btn-whatsapp" type="button" role="button"><i class="fab fa-whatsapp"></i></a>
-  </p>
+</p>
 </div>
 
 

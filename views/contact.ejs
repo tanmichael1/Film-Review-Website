@@ -1,0 +1,32 @@
+<%- include("partials/header"); -%>
+<h1 class="center-div">Contact</h1>
+
+Image here
+
+<div id='form'>
+  <div class="row">
+    <div class="col-md-12">
+
+      <form action="" method="POST" id="commentform">
+
+        <div id="comment-name" class="form-row">
+          <input type="text" placeholder="Name (required)" name="dname" id="name">
+        </div>
+        <div id="comment-email" class="form-row">
+          <input type="text" placeholder="Mail (will not be published) (required)" name="demail" id="email">
+        </div>
+        <div id="comment-url" class="form-row">
+          <input type="text" placeholder="Website" name="url" id="url">
+        </div>
+        <div id="comment-message" class="form-row">
+          <textarea name="comment" placeholder="Message" id="comment"></textarea>
+        </div>
+        <a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Comment"></a>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer"); -%>
