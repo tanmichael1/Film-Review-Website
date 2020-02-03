@@ -1,14 +1,59 @@
 <%- include("partials/header"); -%>
+
+<section class="featured-wrapper">
+  <div
+  </section>
+
 <div class="container">
 
 
-<p>
-  Slideshow of recent posts
-  </p>
+
+  <div id="Carousel" class="carousel slide">
+    <ol class="carousel-indicators">
+      <li data-target="Carousel" data-slide-to="0" class="active"></li>
+      <li data-target="Carousel" data-slide-to="1"></li>
+      <li data-target="Carousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <a href="/example">
+          <img class="carousel-img" src="https://thecinemacritic.files.wordpress.com/2017/03/jw_11934_r-51.jpg" alt="First slide">
+
+          <div class="carousel-caption d-none d-md-block">
+            <h5>John Wick (2014) Review</h5>
+            <p>May 23, 2017</p>
+          </div>
+<div class="mask rgba-white-slight"></div>
+</a>
+
+      </div>
+      <div class="item">
+        <img src="https://i.ytimg.com/vi/BOzFZxB-8cw/maxresdefault.jpg" alt="Second slide">
+      </div>
+      <div class="item">
+        <img src="https://am22.mediaite.com/tms/cnt/uploads/2015/12/mad_max_fury_road_wallpaper_1920x1080_by_sachso74-d8r49ti.jpg" alt="Third slide">
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#Carousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#Carousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
 
 
+  <!--latest jQuery 3-->
 
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
+  <!--Bootstrap JS-->
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </div>
+
+
 
 <%- include("partials/footer"); -%>
