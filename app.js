@@ -15,6 +15,7 @@ app.use(express.static("public"));
 
 const postSchema = {
   title: String,
+  mins: String,
   year: String,
   director: String,
   actors: String,

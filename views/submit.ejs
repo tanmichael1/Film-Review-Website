@@ -1,8 +1,76 @@
 <%- include("partials/header"); -%>
-<h1>Compose</h1>
-<form class="" action="/compose" method="post">
+<h1>Submit Review</h1>
+<!------------Form Start---------->
 
-</form>
+<div id='form'>
+  <div class="row">
+    <div class="col-md-12">
 
+      <form action="" method="POST" id="commentform">
+
+        <div id="filmTitle" class="form-row">
+          <input type="text" placeholder="Film Title" name="dname" id="name">
+        </div>
+        <div id="time" class="form-row">
+          <input type="text" placeholder="Time (in minutes)" name="demail" id="email">
+        </div>
+        <div id="year" class="form-row">
+          <input type="text" placeholder="Year" name="url" id="year">
+        </div>
+
+
+        <div id=director class="form-row">
+          <input type="text" placeholder="Director" name="url" id="Director">
+        </div>
+
+
+
+        <div id="actors" class="form-row">
+          <input type="text" placeholder="Actors" name="url" id="url">
+        </div>
+
+
+
+        <div id="reviewDate" class="form-row">
+          <input type="text" placeholder="Review Date" name="url" id="url">
+        </div>
+
+
+        <div id="post-img" class="form-row">
+          <input type="text" placeholder="post img " name="url" id="url">
+        </div>
+
+
+        <div id="year" class="form-row">
+          <input type="text" placeholder="feed img" name="url" id="url">
+        </div>
+
+
+        <div id="plot" class="form-row">
+          <textarea name="comment" placeholder="plot" id="comment"></textarea>
+        </div>
+
+        <div id="review" class="form-row">
+          <textarea name="comment" placeholder="review" id="comment"></textarea>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+title: String,
+mins: String,
+year: String,
+director: String,
+actors: String,
+plot: String,
+reviewDate: String,
+review: String,
+postImg: String,
+feedImg: String
 
 <%- include("partials/footer"); -%>
