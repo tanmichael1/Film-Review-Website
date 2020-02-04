@@ -22,6 +22,11 @@ const postSchema = {
   plot: String,
   reviewDate: String,
   review: String,
+  rating: {
+    "type": "number",
+    "minimum": 1,
+    "exclusiveMaximum": 100
+  },
   postImg: String,
   feedImg: String
 };

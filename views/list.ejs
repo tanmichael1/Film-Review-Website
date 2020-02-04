@@ -6,14 +6,13 @@
       <h1>
         Reviews List
         </h1>
-  <h2>Filterable Table</h2>
   <p>Use the search bar to filter the table by film names, directors, actors, genres, etc:</p>
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Film Name</th>
+        <th onclick="sortTable(0)">Film Name</th>
         <th>Director</th>
         <th>Actors</th>
         <th>Genre</th>
@@ -39,14 +38,29 @@
         <td>May 23, 2017</td>
       </tr>
       <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@greatstuff.com</td>
+        <td>Halloween</td>
+        <td>John Carpenter</td>
+        <td>Donald Pleasence, Jamie Lee Curtis, Nick Castle, P.J. Soles, Nancy Kyes</td>
+        <td>Horror, Thriller</td>
+        <td>
+          91 Minutes
+          </td>
+          <td>
+            September 24, 2018
+            </td>
       </tr>
       <tr>
-        <td>Anja</td>
-        <td>Ravendale</td>
-        <td>a_r@test.com</td>
+        <td>Mission Impossible: Fallout</td>
+        <td>Christopher McQuarrie</td>
+        <td>Tom Cruise, Henry Cavill, Ving Rhames, Simon Pegg, Rebecca Ferguson, Sean Harris, Angela Bassett, Alec Baldwin, Vanessa Kirby
+          Frederick Schmidt, Michelle Monaghan</td>
+          <td>
+            Action, Adventure, Thriller
+            </td>
+          <td>148 Minutes</td>
+          <td>
+            August 4, 2018
+            </td>
       </tr>
     </tbody>
   </table>
@@ -64,6 +78,59 @@ $(document).ready(function(){
     });
   });
 });
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;table = document.getElementById("myTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc";
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
 </script>
 
 <%- include("partials/footer"); -%>
