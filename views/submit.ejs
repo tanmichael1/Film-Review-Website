@@ -1,4 +1,7 @@
 <%- include("partials/header"); -%>
+<div class="container">
+
+
 <h1>Submit Review</h1>
 <!------------Form Start---------->
 
@@ -53,6 +56,7 @@
         <div id="review" class="form-row">
           <textarea name="comment" placeholder="review" id="comment"></textarea>
         </div>
+        <a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Comment"></a>
 
 
       </form>
@@ -60,17 +64,7 @@
     </div>
   </div>
 </div>
+</div>
 
-
-title: String,
-mins: String,
-year: String,
-director: String,
-actors: String,
-plot: String,
-reviewDate: String,
-review: String,
-postImg: String,
-feedImg: String
 
 <%- include("partials/footer"); -%>
