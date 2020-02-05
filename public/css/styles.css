@@ -31,6 +31,10 @@ textarea{
   background-size: cover;
 }
 
+.logo{
+  background-image: "images/logo.png";
+}
+
 .center {
   display:inline-block;
   text-align: center;
