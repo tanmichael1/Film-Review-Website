@@ -5,14 +5,30 @@
 
   <h1>Latest Posts</h1>
 
-  <a href="/example">John Wick</a>
-  <br>
 
-  <img width="470" height="320" src="https://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/Movies/2014/JohnWick_152500700_1810080-219613._V331809634_SX1080_.jpg" alt="">
 <br>
 <br>
+
+
+
+ <% posts.forEach(function(post){ %>
+   <%=post.reviewDate()%>
+   <a href="/example"><%=post.title %></a>
+   <br>
+   <img width="470" height="320" src=<%=post.feedImg %> alt="">
+   <br> <br>
+
+
+ <% }); %>
+<br>
+<br>
+
   <button type="button" class="btn btn-primary center-button">Older Posts</button>
 
 </div>
+
+
+
+
 
 <%- include("partials/footer"); -%>

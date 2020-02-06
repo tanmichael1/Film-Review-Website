@@ -27,7 +27,7 @@ const postSchema = {
   director: String,
   actors: [String],
   plot: String,
-  reviewDate: String,
+  reviewDate: Date,
   review: [String],
   rating: {
     type: Number,
@@ -48,7 +48,7 @@ const johnWick = new Post({
   director: "Chad Stahelski, David Leitch",
   actors: ["Keanu Reeves", "Michael Nyqvist", "Alfie Allen", "Willem Dafoe"],
   plot: "After the sudden death of his beloved wife, John Wick (Keanu Reeves) receives one last gift from her, a beagle puppy named Daisy, and a note imploring him not to forget how to love. But John’s mourning is interrupted when his 1969 Boss Mustang catches the eye of sadistic thug Iosef Tarasov (Alfie Allen) who breaks into his house and steals it, beating John unconscious and leaving Daisy dead. Unwittingly, they have just reawakened one of the most brutal assassins the underworld has ever seen.",
-  reviewDate: "March 7, 2017",
+  reviewDate: "2017-03-07",
   review:
     ["With the sequel coming sometime soon, I thought I should give my thoughts on the original John Wick. John Wick was one of the most surprising movies of 2014. It wasn’t just a standard Keanu Reeves action flick, it was actually something special, garnering a strong reception and following. It is an entertaining and thrilling action movie.",
 
@@ -74,7 +74,7 @@ const halloween = new Post({
   director: "John Carpenter",
   actors: ["Donald Pleasence", "Jamie Lee Curtis", "Nick Castle", "P.J. Soles", "Nancy Kyes"],
   plot: "On a cold Halloween night in 1963, six year old Michael Myers brutally murdered his 17-year-old sister, Judith. He was sentenced and locked away for 15 years. But on October 30, 1978, while being transferred for a court date, a 21-year-old Michael Myers steals a car and escapes Smith’s Grove. He returns to his quiet hometown of Haddonfield, Illinois, where he looks for his next victims.",
-  reviewDate: "September 24, 2018",
+  reviewDate: "2018-09-24",
   review:
     ["With the latest Halloween movie coming out less than a month away, I decided to have another look back at John Carpenter’s horror classic, Halloween. Halloween was revolutionary for film, especially for the horror genre. Even with a smaller budget and a simple premise, they really caught lighting in a bottle with this.",
 
@@ -92,17 +92,18 @@ rating: 9,
 
 });
 
+
 //post.save();
 
-Post.insertMany([johnWick, halloween], function(err, posts){
-  if(err){
-    console.log(err);
-  }
-
-  else{
-    console.log("Successfully saved all the posts to postsDB");
-  }
-});
+// Post.insertMany([johnWick, halloween], function(err, posts){
+//   if(err){
+//     console.log(err);
+//   }
+//
+//   else{
+//     console.log("Successfully saved all the posts to postsDB");
+//   }
+// });
 
 // Post.deleteOne({title:"Halloween"}, function(err){
 //   if(err){
@@ -141,7 +142,7 @@ Post.find(function(err, posts){
 
 app.get("/", function(req, res){
   res.render("home", {startingContent: homeStartingContent,
-    title:reviewTitle
+    title:reviewTitle,
   });
 });
 
@@ -153,12 +154,19 @@ app.get("/list", function(req, res){
   res.render("list");
 });
 
-app.get("/submit", function(req, res){
-  res.render("submit");
-});
+
 
 app.get("/latest", function(req, res){
-  res.render("latest");
+  Post.find(function(err, posts){
+    if(err){
+      console.log(err);
+    }
+
+    else{
+      res.render("latest", {posts: posts});
+    }
+  });
+
 });
 
 app.get("/contact", function(req, res){
@@ -168,6 +176,29 @@ app.get("/contact", function(req, res){
 app.get("/example", function(req, res){
   res.render("example", {filmTitle: "John Wick"});
 });
+
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+
+app.get("/submit", function(req, res){
+  res.render("submit",{ date:new Date().toLocaleDateString()});
+});
+
+// app.post("/submit", function(req, res){
+//   console.log(req.body);
+//   const post = {
+//
+//   }
+//
+//   posts.push(post);
+//
+//
+//   res.redirect("/latest", posts);
+//
+//
+// })
 
 app.get("/posts/:postID", function(req, res){
   const requestedPostId = req.params.postID;

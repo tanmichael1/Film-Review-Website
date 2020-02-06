@@ -1,4 +1,5 @@
 <%- include("partials/header"); -%>
+<%=date %>
 <div class="container">
 
 
@@ -36,6 +37,8 @@
 
         <div id="reviewDate" class="form-row">
           <input type="text" placeholder="Review Date" name="url" id="url">
+          <input type="date" id="start" name="trip-start" value=<%=date %>
+       min="2018-01-01" max=<%=date %>>
         </div>
 
 
@@ -58,7 +61,8 @@
         </div>
 
         <div id="rating" class="form-row">
-          <input type="number" placeholder="Rating (between 1 and 10)" name="rating" id="rating">
+          <input type="number" placeholder="Rating (between 1 and 10)" name="rating" id="rating"
+          min="1" max="10">
         </div>
 
         <a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Comment"></a>
