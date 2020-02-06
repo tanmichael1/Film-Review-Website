@@ -163,7 +163,7 @@ app.get("/latest", function(req, res){
     }
 
     else{
-      res.render("latest", {posts: posts});
+      res.render("latest", {posts: posts.sort(function(a,b){return a.reviewDate-b.reviewDate}).reverse()});
     }
   });
 
