@@ -5,10 +5,10 @@
 
   <div class="bg"></div>
 
-  
+
 
   <p class="py-5 text-center">This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
-
+<!--
   <div id="Carousel" class="carousel slide">
     <ol class="carousel-indicators">
       <li data-target="Carousel" data-slide-to="0" class="active"></li>
@@ -43,7 +43,63 @@
     <a class="right carousel-control" href="#Carousel" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
+  </div> -->
+
+
+
+  <div id="Carousel" class="carousel slide">
+    <ol class="carousel-indicators">
+      <li data-target="Carousel" data-slide-to="0" class="active"></li>
+      <li data-target="Carousel" data-slide-to="1"></li>
+      <li data-target="Carousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <a href="/example">
+          <img class="carousel-img" src=<%=posts[0].feedImg %> alt="First slide">
+
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%=posts[0].title %> (<%=posts[0].year %>) Review</h5>
+            <p> <%=posts[0].reviewDate.toLocaleDateString() %></p>
+          </div>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+
+      </div>
+      <div class="item">
+        <a href="/example">
+          <img class="carousel-img" src=<%=posts[1].feedImg %> alt="Second slide">
+
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%=posts[1].title %> (<%=posts[1].year %>) Review</h5>
+            <p> <%=posts[1].reviewDate.toLocaleDateString() %></p>
+          </div>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="/example">
+          <img class="carousel-img2"src=<%=posts[2].feedImg %> alt="Third slide">
+
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%=posts[2].title %> (<%=posts[2].year %>) Review</h5>
+            <p> <%=posts[2].reviewDate.toLocaleDateString() %></p>
+          </div>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#Carousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#Carousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
   </div>
+
+
 
 
   <!--latest jQuery 3-->
