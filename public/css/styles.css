@@ -19,6 +19,10 @@ textarea{
   background-color: white;
 }
 
+.content-box{
+  width:100%;
+}
+
 .bg {
   /* The image used */
   background-image: url("https://thecinemacritic.files.wordpress.com/2017/03/jw_11934_r-51.jpg");
