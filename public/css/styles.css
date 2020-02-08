@@ -14,7 +14,8 @@ textarea{
   width:100%;
 }
 
-.container{
+
+ .container{
   background-color: white;
 }
 
@@ -30,6 +31,7 @@ textarea{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 
 .logo{
   background-image: "images/logo.png";

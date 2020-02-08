@@ -12,7 +12,8 @@
 
 
  <% posts.forEach(function(post){ %>
-   <a href="/example"><%=post.title %></a>
+   <a href="/posts/<%=post._id %>"><%=post.title %></a>
+    <a href="/posts/<%=post.title%>"><%=post.title %></a>
    <br>
    <img width="470" height="320" src=<%=post.feedImg %> alt="">
    <br> <br>

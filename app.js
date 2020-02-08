@@ -279,14 +279,69 @@ app.get("/list", function(req, res) {
     //
     // })
 
-    app.get("/posts/:postID", function(req, res) {
-      const requestedPostId = req.params.postID;
-      res.render(requestedPostId);
-      console.log(requestedPostId);
+    app.get("/posts/:postName", function(req, res) {
+      var requestedPostId = req.params.postName;
+      console.log("requestedPostId is " + requestedPostId);
+      Post.findOne({_id: requestedPostId}, function(err, foundPost){
+        console.log(foundPost);
+        if(err){
+          console.log(err);
+        }
+
+        else{
+          if(foundPost){
+            console.log("found");
+            res.render("post", {post: foundPost});
+          }
+
+          else{
+            console.log("Cannot find post");
+          }
+        }
+      });
+
+
     });
 
+    // app.get("/posts/:postID", function(req, res) {
+    //   const requestedPostId = req.params.postID;
+    //   console.log(requestedPostId);
+    //   Post.findOne({_id: requestedPostId}, function(err, foundPost){
+    //     console.log(foundPost);
+    //     if(err){
+    //       console.log(err);
+    //     }
+    //
+    //     else{
+    //       if(foundPost){
+    //         console.log("found");
+    //         res.render("post", {post: foundPost});
+    //       }
+    //
+    //       else{
+    //         console.log("Cannot find post");
+    //       }
+    //     }
+    //   });
+    //
+    //
+    // });
 
-
+//     app.get("/posts/:postID", function(req, res){
+//
+// const requestedPostId = req.params.postId;
+// console.log("requestedPostId: " + requestedPostId);
+//
+//   Post.findOne({_id: requestedPostId}, function(err, post){
+//     if(err){
+//           console.log(err);
+//         }
+//     console.log("Post: " + post);
+//     res.render("post", { post:post
+//     });
+//   });
+//
+// });
 
 
 
