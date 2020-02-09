@@ -1,9 +1,14 @@
 <%- include("partials/header"); -%>
 
-<div class="container content-box">
+
+<div class="container">
 
 
-  <h1>Latest Posts</h1>
+<h1>Latest Posts</h1>
+<div class="content-box text-center">
+
+
+
 
 
 <br>
@@ -13,7 +18,6 @@
 
  <% posts.forEach(function(post){ %>
    <a href="/posts/<%=post._id %>"><%=post.title %></a>
-    <a href="/posts/<%=post.title%>"><%=post.title %></a>
    <br>
    <img width="470" height="320" src=<%=post.feedImg %> alt="">
    <br> <br>
@@ -24,6 +28,8 @@
 <br>
 
   <button type="button" class="btn btn-primary center-button">Older Posts</button>
+
+</div>
 
 </div>
 

@@ -3,77 +3,87 @@
 <div class="container content-box">
 
 
-<h1>Submit Review</h1>
-<!------------Form Start---------->
+  <h1>Submit Review</h1>
+  <!------------Form Start---------->
 
-<div id='form'>
-  <div class="row">
-    <div class="col-md-12">
+  <div id='form'>
+    <div class="row">
+      <div class="col-md-12">
 
-      <form action="" method="POST" id="commentform">
+        <form action="/submit" method="post" id="commentform">
+          <div class="form-group">
+            <label>Title</label>
+            <input class="form-control" type="text" name="postTitle">
+            <label>Post</label>
+            <textarea class="form-control" name="postBody" rows="5" cols="30"></textarea>
 
-        <div id="filmTitle" class="form-row">
-          <input type="text" placeholder="Film Title" name="dname" id="name">
-        </div>
-        <div id="time" class="form-row">
-          <input type="text" placeholder="Time (in minutes)" name="demail" id="email">
-        </div>
-        <div id="year" class="form-row">
-          <input type="text" placeholder="Year" name="url" id="year">
-        </div>
+            <label for="">Title</label>
 
-
-        <div id=director class="form-row">
-          <input type="text" placeholder="Director" name="url" id="Director">
-        </div>
-
-
-
-        <div id="actors" class="form-row">
-          <input type="text" placeholder="Actors" name="url" id="url">
-        </div>
+            <div id="filmTitle" class="form-row">
+              <input type="text" placeholder="Film Title" name="dname" id="name">
+            </div>
+            <div id="time" class="form-row">
+              <input type="text" placeholder="Time (in minutes)" name="demail" id="email">
+            </div>
+            <div id="year" class="form-row">
+              <input type="text" placeholder="Year" name="url" id="year">
+            </div>
 
 
-
-        <div id="reviewDate" class="form-row">
-          <input type="text" placeholder="Review Date" name="url" id="url">
-          <input type="date" id="start" name="trip-start" value=<%=date %>
-       min="2018-01-01" max=<%=date %>>
-        </div>
-
-
-        <div id="post-img" class="form-row">
-          <input type="text" placeholder="post img " name="url" id="url">
-        </div>
-
-
-        <div id="year" class="form-row">
-          <input type="text" placeholder="feed img" name="url" id="url">
-        </div>
-
-
-        <div id="plot" class="form-row">
-          <textarea name="comment" placeholder="plot" id="comment"></textarea>
-        </div>
-
-        <div id="review" class="form-row">
-          <textarea name="comment" placeholder="review" id="comment"></textarea>
-        </div>
-
-        <div id="rating" class="form-row">
-          <input type="number" placeholder="Rating (between 1 and 10)" name="rating" id="rating"
-          min="1" max="10">
-        </div>
-
-        <a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Comment"></a>
+            <div id=director class="form-row">
+              <input type="text" placeholder="Director" name="url" id="Director">
+            </div>
 
 
 
-      </form>
+            <div id="actors" class="form-row">
+              <input type="text" placeholder="Actors" name="url" id="url">
+            </div>
 
+
+
+            <div id="reviewDate" class="form-row">
+              <input type="text" placeholder="Review Date" name="url" id="url">
+              <input type="date" id="start" name="trip-start" value=<%=date %> min="2018-01-01" max=<%=date %>>
+            </div>
+
+
+            <div id="post-img" class="form-row">
+              <input type="text" placeholder="post img " name="url" id="url">
+            </div>
+
+
+            <div id="year" class="form-row">
+              <input type="text" placeholder="feed img" name="url" id="url">
+            </div>
+
+
+            <div id="plot" class="form-row">
+              <textarea name="comment" placeholder="plot" id="comment"></textarea>
+            </div>
+
+            <div id="review" class="form-row">
+              <textarea name="comment" placeholder="review" id="comment"></textarea>
+            </div>
+
+            <div id="rating" class="form-row">
+              <input type="number" placeholder="Rating (between 1 and 10)" name="rating" id="rating" min="1" max="10">
+            </div>
+
+            <a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Comment"></a>
+
+
+          </div>
+
+
+
+
+
+        </form>
+
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 

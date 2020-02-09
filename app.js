@@ -266,6 +266,34 @@ app.get("/list", function(req, res) {
     });
 
     // app.post("/submit", function(req, res){
+    //   const post = new Post({
+    //     title: req.body.postTitle,
+    //     mins: Number,
+    //     year: Number,
+    //     genres: [String],
+    //     director: String,
+    //     actors: [String],
+    //     plot: String,
+    //     reviewDate: Date,
+    //     review: [String],
+    //     rating: {
+    //       type: Number,
+    //       min: [1, "Choose a rating between 1 and 10"],
+    //       max: [10, "Choose a rating between 1 and 10"]
+    //     },
+    //     postImg: String,
+    //     feedImg: String
+    //   });
+
+
+    //   post.save(function(err){
+    //     if (!err){
+    //         res.redirect("/");
+    //     }
+    //   });
+    // });
+
+    // app.post("/submit", function(req, res){
     //   console.log(req.body);
     //   const post = {
     //
@@ -278,6 +306,7 @@ app.get("/list", function(req, res) {
     //
     //
     // })
+
 
     app.get("/posts/:postName", function(req, res) {
       var requestedPostId = req.params.postName;

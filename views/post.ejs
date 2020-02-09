@@ -4,9 +4,7 @@
 
   <div class="review">
 
-  <%=post.title %>
 
-  <div>
 
   <h1><%=post.title %> (<%=post.year%>) Movie Review</h1>
   <img width="798" height="528" class="review-img" src=<%=post.postImg %> alt="">
@@ -36,7 +34,23 @@
 
   <% }); %>
 
-  </div>
+
+  <h2>Final Verdict</h2>
+  <br>
+  <% for(var i=0; i<post.rating; i++){ %>
+    ⭐
+
+
+
+  <% } %>
+
+  <% for(var i=0; i<10-post.rating; i++){ %>
+    ★
+
+
+  <% } %>
+
+
 
 </div>
 
