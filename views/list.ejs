@@ -1,8 +1,6 @@
 <%- include("partials/header"); -%>
 
-
-
-    <div class="container content-box">
+    <div class="container content-box height">
       <h1>
         Reviews List
         </h1>
@@ -28,7 +26,7 @@
       <% posts.forEach(function(post){ %>
         <tr>
           <td>
-            <a href="/example"><%=post.title %></a>
+            <a href="/posts/<%=post._id %>"><%=post.title %></a>
             </td>
             <td>
               <%=post.year %>

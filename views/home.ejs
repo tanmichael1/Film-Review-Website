@@ -1,49 +1,9 @@
 <%- include("partials/header"); -%>
-
-
 <div class="container content-box height">
 
   <div class="bg"></div>
 
-
-
   <p class="py-5 text-center">This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
-<!--
-  <div id="Carousel" class="carousel slide">
-    <ol class="carousel-indicators">
-      <li data-target="Carousel" data-slide-to="0" class="active"></li>
-      <li data-target="Carousel" data-slide-to="1"></li>
-      <li data-target="Carousel" data-slide-to="2"></li>
-    </ol>
-
-    <div class="carousel-inner">
-      <div class="item active">
-        <a href="/example">
-          <img class="carousel-img" src="https://thecinemacritic.files.wordpress.com/2017/03/jw_11934_r-51.jpg" alt="First slide">
-
-          <div class="carousel-caption d-none d-md-block">
-            <h5>John Wick (2014) Review</h5>
-            <p>May 23, 2017</p>
-          </div>
-          <div class="mask rgba-white-slight"></div>
-        </a>
-
-      </div>
-      <div class="item">
-        <img src="https://i.ytimg.com/vi/BOzFZxB-8cw/maxresdefault.jpg" alt="Second slide">
-      </div>
-      <div class="item">
-        <img src="https://am22.mediaite.com/tms/cnt/uploads/2015/12/mad_max_fury_road_wallpaper_1920x1080_by_sachso74-d8r49ti.jpg" alt="Third slide">
-      </div>
-    </div>
-
-    <a class="left carousel-control" href="#Carousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#Carousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-  </div> -->
 
 
 
@@ -56,7 +16,7 @@
 
     <div class="carousel-inner">
       <div class="item active">
-        <a href="/example">
+        <a href="/posts/<%=posts[0]._id %>">
           <img class="carousel-img" src=<%=posts[0].feedImg %> alt="First slide">
 
           <div class="carousel-caption d-none d-md-block">
@@ -68,7 +28,7 @@
 
       </div>
       <div class="item">
-        <a href="/example">
+        <a href="/posts/<%=posts[1]._id %>">
           <img class="carousel-img" src=<%=posts[1].feedImg %> alt="Second slide">
 
           <div class="carousel-caption d-none d-md-block">
@@ -79,7 +39,7 @@
         </a>
       </div>
       <div class="item">
-        <a href="/example">
+        <a href="/posts/<%=posts[0]._id %>">
           <img class="carousel-img2"src=<%=posts[2].feedImg %> alt="Third slide">
 
           <div class="carousel-caption d-none d-md-block">

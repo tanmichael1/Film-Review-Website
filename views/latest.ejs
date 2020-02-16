@@ -1,39 +1,41 @@
 <%- include("partials/header"); -%>
+<div class="container content-box">
 
-
-<div class="container">
-
-<h1>Latest Posts</h1>
-<div class="content-box text-center">
-
-
-
-
-
-<br>
-<br>
-
-
-
- <% posts.forEach(function(post){ %>
-   <a href="/posts/<%=post._id %>"><%=post.title %></a>
-   <br>
-   <img width="470" height="320" src=<%=post.feedImg %> alt="">
-   <br> <br>
-
-
- <% }); %>
+  <h1>Latest Posts</h1>
+  <div class="text-center">
 
 
 
 
 
-<br>
-<br>
+    <br>
+    <br>
 
-  <button type="button" class="btn btn-primary center-button">Older Posts</button>
 
-</div>
+
+    <% posts.forEach(function(post){ %>
+
+
+
+    <a href="/posts/<%=post._id %>"><%=post.title %></a>
+    <br>
+    <img width="470" height="320" src=<%=post.feedImg %> alt="">
+    <br> <br>
+
+
+
+    <% }); %>
+
+
+
+
+
+    <br>
+    <br>
+
+    <button type="button" class="btn btn-primary center-button">Older Posts</button>
+
+  </div>
 
 </div>
 
