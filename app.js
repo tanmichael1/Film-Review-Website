@@ -265,33 +265,29 @@ app.get("/list", function(req, res) {
       });
     });
 
-    // app.post("/submit", function(req, res){
-    //   const post = new Post({
-    //     title: req.body.postTitle,
-    //     mins: Number,
-    //     year: Number,
-    //     genres: [String],
-    //     director: String,
-    //     actors: [String],
-    //     plot: String,
-    //     reviewDate: Date,
-    //     review: [String],
-    //     rating: {
-    //       type: Number,
-    //       min: [1, "Choose a rating between 1 and 10"],
-    //       max: [10, "Choose a rating between 1 and 10"]
-    //     },
-    //     postImg: String,
-    //     feedImg: String
-    //   });
+    app.post("/submit", function(req, res){
+      const post = new Post({
+        title: req.body.postTitle,
+        mins: req.body.mins,
+        year: req.body.year,
+        genres: req.body.genres,
+        director: String,
+        actors: [String],
+        plot: req.body.plot,
+        reviewDate: req.body.reviewDate,
+        review: req.body.review,
+        rating: req.body.rating,
+        postImg: req.body.postImg,
+        feedImg: req.body.feedImg
+      });
 
 
-    //   post.save(function(err){
-    //     if (!err){
-    //         res.redirect("/");
-    //     }
-    //   });
-    // });
+      post.save(function(err){
+        if (!err){
+            res.redirect("/");
+        }
+      });
+    });
 
     // app.post("/submit", function(req, res){
     //   console.log(req.body);

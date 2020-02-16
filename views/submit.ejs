@@ -14,63 +14,94 @@
           <div class="form-group">
             <label>Title</label>
             <input class="form-control" type="text" name="postTitle">
-            <label>Post</label>
-            <textarea class="form-control" name="postBody" rows="5" cols="30"></textarea>
+            <br>
 
-            <label for="">Title</label>
 
-            <div id="filmTitle" class="form-row">
-              <input type="text" placeholder="Film Title" name="dname" id="name">
-            </div>
-            <div id="time" class="form-row">
-              <input type="text" placeholder="Time (in minutes)" name="demail" id="email">
-            </div>
+
+            <label for="">Time (in minutes)</label>
+            <input type="text" name="mins" value="">
+            <br>
+
+            <label for="">Release Year</label>
             <div id="year" class="form-row">
-              <input type="text" placeholder="Year" name="url" id="year">
+              <input type="text" placeholder="Year" name="year" id="year">
             </div>
+            <br>
 
-
+            <label for="">Director</label>
             <div id=director class="form-row">
-              <input type="text" placeholder="Director" name="url" id="Director">
+              <input type="text" placeholder="Director" name="director" id="Director">
             </div>
+            <br>
 
 
-
+            <label for="">Actors</label>
             <div id="actors" class="form-row">
-              <input type="text" placeholder="Actors" name="url" id="url">
+              <input type="text" placeholder="Actors" name="actors" id="url">
+            </div>
+            <br>
+
+            <form action="/action_page.php">
+              <input type="checkbox" name="vehicle1" value="Bike">
+              <label for="vehicle1"> I have a bike</label><br>
+              <input type="checkbox" name="vehicle2" value="Car">
+              <label for="vehicle2"> I have a car</label><br>
+              <input type="checkbox" name="vehicle3" value="Boat" checked>
+              <label for="vehicle3"> I have a boat</label><br><br>
+              <input type="submit" value="Submit">
+            </form>
+
+            <label for="">Genres</label>
+            <div id="actors" class="form-row">
+              <input type="text" placeholder="Actors" name="actors" id="url">
             </div>
 
+            <form action="/action_page.php">
+              <input type="checkbox" name="vehicle1" value="Bike">
+              <label for="vehicle1"> I have a bike</label><br>
+              <input type="checkbox" name="vehicle2" value="Car">
+              <label for="vehicle2"> I have a car</label><br>
+              <input type="checkbox" name="vehicle3" value="Boat" checked>
+              <label for="vehicle3"> I have a boat</label><br><br>
+              <input type="submit" value="Submit">
+            </form>
 
 
+            <label for="">Review Date</label>
             <div id="reviewDate" class="form-row">
-              <input type="text" placeholder="Review Date" name="url" id="url">
+              <input type="text" placeholder="Review Date" name="reviewDate" id="url">
               <input type="date" id="start" name="trip-start" value=<%=date %> min="2018-01-01" max=<%=date %>>
             </div>
 
-
+            <label for="">Post image link</label>
             <div id="post-img" class="form-row">
-              <input type="text" placeholder="post img " name="url" id="url">
+              <input type="text" placeholder="post img " name="postImg" id="url">
             </div>
 
-
+            <label for="">Feed image link</label>
             <div id="year" class="form-row">
-              <input type="text" placeholder="feed img" name="url" id="url">
+              <input type="text" placeholder="feed img" name="feedImg" id="url">
             </div>
 
-
+            <label for="">Plot</label>
             <div id="plot" class="form-row">
               <textarea name="comment" placeholder="plot" id="comment"></textarea>
             </div>
 
+            <label for="">Review</label>
             <div id="review" class="form-row">
               <textarea name="comment" placeholder="review" id="comment"></textarea>
             </div>
 
+            <label>Review</label>
+            <textarea class="form-control" name="postBody" rows="5" cols="30"></textarea>
+
             <div id="rating" class="form-row">
-              <input type="number" placeholder="Rating (between 1 and 10)" name="rating" id="rating" min="1" max="10">
+              <label for="">Rating (between 1 and 10)</label>
+              <input type="number" name="quantity" min="1" max="10">
             </div>
 
-            <a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Comment"></a>
+            <a href="#"><input type="submit" name="submit" id="commentSubmit" value="Submit"></a>
 
 
           </div>
