@@ -207,6 +207,10 @@ app.get("/about", function(req, res) {
   });
 });
 
+app.get("/test", function(req, res) {
+  res.render("test");
+});
+
 app.get("/list", function(req, res) {
       Post.find(function(err, posts) {
         if (err) {

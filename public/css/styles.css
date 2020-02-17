@@ -14,6 +14,14 @@ textarea{
   width:100%;
 }
 
+.heading{
+  background-image: url("https://www.indiewire.com/wp-content/uploads/2017/02/blade-runner.jpg");
+  background-position: center;
+
+
+}
+
+
 .height{
   min-height: 100vh;
 }
