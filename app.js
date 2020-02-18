@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 const reviewTitle = "Default Title"
-const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Non diam phasellus vestibulum lorem sed. Platea dictumst quisque sagittis purus sit. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Mauris in aliquam sem fringilla. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Amet massa vitae tortor condimentum lacinia quis vel eros. Enim ut tellus elementum sagittis vitae. Mauris ultrices eros in cursus turpis massa tincidunt dui.";
+const aboutContent = "Welcome to my Movie Blog. My name is Michael, and I'm the founder, CEO, and the movie critic behind this blog.";
 const homeStartingContent = "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
 app.set('view engine', 'ejs');
 
@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
+app.use(express.static("images"));
 
 mongoose.connect("mongodb://localhost:27017/blogDB", {
   useNewUrlParser: true,
@@ -71,6 +72,8 @@ const johnWick = new Post({
 
 });
 
+
+
 const halloween = new Post({
   title: "Halloween",
   mins: 91,
@@ -108,13 +111,13 @@ const dredd = new Post({
   reviewDate: "2017-08-11",
   review: ["Dredd had a lot of potential to fail. There had been a Judge Dredd movie with Sylvester Stallone in the mid 90s, which while enjoyable as a guilty pleasure, isn’t very good. Dredd was a surprise to many including myself, it had all the elements of a very solid action flick fun time, and from what I can tell its an accurate representation of Judge Dredd. One of the most underrated action movies in recent years.",
 
-"This movie is very straightforward, it’s just our main characters going from room to room while hoards of enemies hunt for them. Now I’m not a Judge Dredd comics fan but I could tell that the original Judge Dredd was more of a Sylvester Stallone action flick than an actual Judge Dredd movie. Dredd is truly a Judge Dredd film. The world is really nicely realised, it is a grim and dark world, the R rating really helped the movie go deeper into it. I was entertained throughout, from the set up at the beginning to when the film actually kicks off, which is when our protagonists are actually facing endless amounts of people trying to kill them and it doesn’t let up. There isn’t anything wrong about the film that I could pinpoint, it has great protagonists, a threatening antagonist and an interesting world, everything that Dredd needed.",
+    "This movie is very straightforward, it’s just our main characters going from room to room while hoards of enemies hunt for them. Now I’m not a Judge Dredd comics fan but I could tell that the original Judge Dredd was more of a Sylvester Stallone action flick than an actual Judge Dredd movie. Dredd is truly a Judge Dredd film. The world is really nicely realised, it is a grim and dark world, the R rating really helped the movie go deeper into it. I was entertained throughout, from the set up at the beginning to when the film actually kicks off, which is when our protagonists are actually facing endless amounts of people trying to kill them and it doesn’t let up. There isn’t anything wrong about the film that I could pinpoint, it has great protagonists, a threatening antagonist and an interesting world, everything that Dredd needed.",
 
-"Karl Urban is Judge Dredd, that’s all I can really say. He is ruthless, badass and unrelenting, and no, at no point do you see him without his mask. This movie really isn’t a character study or anything like that, so don’t expect a lot of character depth with his version of Judge Dredd, but it worked very well for the movie as it was a straightforward action movie. Olivia Thirlby is also really good as a rookie judge with Dredd, who does have psychic powers, those two worked together well as our main characters. Lena Headey makes for a great villain, ruthless, sinister and brutal, she stole every scene she was in. Also the way she plays the role and reacted to certain situations made her have such a strong screen presence.",
+    "Karl Urban is Judge Dredd, that’s all I can really say. He is ruthless, badass and unrelenting, and no, at no point do you see him without his mask. This movie really isn’t a character study or anything like that, so don’t expect a lot of character depth with his version of Judge Dredd, but it worked very well for the movie as it was a straightforward action movie. Olivia Thirlby is also really good as a rookie judge with Dredd, who does have psychic powers, those two worked together well as our main characters. Lena Headey makes for a great villain, ruthless, sinister and brutal, she stole every scene she was in. Also the way she plays the role and reacted to certain situations made her have such a strong screen presence.",
 
-"Dredd surprisingly only has a 30-45 million dollar budget, making it a much smaller film than you’d expect. However that budget was used well because this film is directly greatly. The action is great, it is very violent and pretty much how I would imagine a Judge Dredd film would be. This film also involves slow-mo, and they find a way to make slow-mo actually make sense, as there is a drug literally called slow-mo that slows down the brain of whoever takes it and it was portrayed so well on screen. The R-rating is not always necessary but sometimes it is really needed to fully make the movie they want. This is one of those cases. The film is brutal and dark, definitely far from the Stallone cheesefest from the 90s, and I loved it.",
+    "Dredd surprisingly only has a 30-45 million dollar budget, making it a much smaller film than you’d expect. However that budget was used well because this film is directly greatly. The action is great, it is very violent and pretty much how I would imagine a Judge Dredd film would be. This film also involves slow-mo, and they find a way to make slow-mo actually make sense, as there is a drug literally called slow-mo that slows down the brain of whoever takes it and it was portrayed so well on screen. The R-rating is not always necessary but sometimes it is really needed to fully make the movie they want. This is one of those cases. The film is brutal and dark, definitely far from the Stallone cheesefest from the 90s, and I loved it.",
 
-"I thoroughly enjoyed Dredd, the actors were great in their roles, the action is good. This film isn’t revolutionary, I don’t think I’d consider it one of the best action films of the 2010s, but for what it was trying to be it succeeded very well. I have no idea if they are making a Dredd sequel but I’d love to see one, I wanna see more of the world that they portrayed."
+    "I thoroughly enjoyed Dredd, the actors were great in their roles, the action is good. This film isn’t revolutionary, I don’t think I’d consider it one of the best action films of the 2010s, but for what it was trying to be it succeeded very well. I have no idea if they are making a Dredd sequel but I’d love to see one, I wanna see more of the world that they portrayed."
   ],
 
   rating: 9,
@@ -176,7 +179,9 @@ Post.find(function(err, posts) {
 // Post Image
 // Feed Image
 
+app.use(express.static("images"));
 
+app.use(express.static('/public/images'));
 
 app.get("/", function(req, res) {
   Post.find(function(err, posts) {
@@ -212,149 +217,185 @@ app.get("/test", function(req, res) {
 });
 
 app.get("/list", function(req, res) {
-      Post.find(function(err, posts) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.render("list", {
-            posts: posts.sort(function(a, b) {
-              if (a.title < b.title) {
-                return -1;
-              }
-              if (a.title > b.title) {
-                return 1;
-              }
-              return 0;
-            })
-          });
-        }
-      });
-    });
-
-
-
-    app.get("/latest", function(req, res) {
-      Post.find(function(err, posts) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.render("latest", {
-            posts: posts.sort(function(a, b) {
-              return a.reviewDate - b.reviewDate
-            }).reverse()
-          });
-        }
-      });
-
-    });
-
-    app.get("/contact", function(req, res) {
-      res.render("contact");
-    });
-
-    app.get("/example", function(req, res) {
-      res.render("example", {
-        filmTitle: "John Wick"
-      });
-    });
-
-    var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + ' ' + time;
-
-    app.get("/submit", function(req, res) {
-      res.render("submit", {
-        date: new Date().toLocaleDateString()
-      });
-    });
-
-    app.post("/submit", function(req, res){
-      const post = new Post({
-        title: req.body.postTitle,
-        mins: req.body.mins,
-        year: req.body.year,
-        genres: req.body.genres,
-        director: String,
-        actors: [String],
-        plot: req.body.plot,
-        reviewDate: req.body.reviewDate,
-        review: req.body.review,
-        rating: req.body.rating,
-        postImg: req.body.postImg,
-        feedImg: req.body.feedImg
-      });
-
-
-      post.save(function(err){
-        if (!err){
-            res.redirect("/");
-        }
-      });
-    });
-
-    // app.post("/submit", function(req, res){
-    //   console.log(req.body);
-    //   const post = {
-    //
-    //   }
-    //
-    //   posts.push(post);
-    //
-    //
-    //   res.redirect("/latest", posts);
-    //
-    //
-    // })
-
-
-    app.get("/posts/:postName", function(req, res) {
-      var requestedPostId = req.params.postName;
-      console.log("requestedPostId is " + requestedPostId);
-      Post.findOne({_id: requestedPostId}, function(err, foundPost){
-        console.log(foundPost);
-        if(err){
-          console.log(err);
-        }
-
-        else{
-          if(foundPost){
-            console.log("found");
-            res.render("post", {post: foundPost});
+  Post.find(function(err, posts) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("list", {
+        posts: posts.sort(function(a, b) {
+          if (a.title < b.title) {
+            return -1;
           }
-
-          else{
-            console.log("Cannot find post");
+          if (a.title > b.title) {
+            return 1;
           }
-        }
+          return 0;
+        })
       });
+    }
+  });
+});
 
 
-    });
 
-    // app.get("/posts/:postID", function(req, res) {
-    //   const requestedPostId = req.params.postID;
-    //   console.log(requestedPostId);
-    //   Post.findOne({_id: requestedPostId}, function(err, foundPost){
-    //     console.log(foundPost);
-    //     if(err){
-    //       console.log(err);
-    //     }
-    //
-    //     else{
-    //       if(foundPost){
-    //         console.log("found");
-    //         res.render("post", {post: foundPost});
-    //       }
-    //
-    //       else{
-    //         console.log("Cannot find post");
-    //       }
-    //     }
-    //   });
-    //
-    //
-    // });
+app.get("/latest", function(req, res) {
+  Post.find(function(err, posts) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("latest", {
+        posts: posts.sort(function(a, b) {
+          return a.reviewDate - b.reviewDate
+        }).reverse()
+      });
+    }
+  });
+
+});
+
+app.get("/contact", function(req, res) {
+  res.render("contact");
+});
+
+app.get("/example", function(req, res) {
+  res.render("example", {
+    filmTitle: "John Wick"
+  });
+});
+
+var today = new Date();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date + ' ' + time;
+
+app.get("/submit", function(req, res) {
+  res.render("submit", {
+    date: new Date().toLocaleDateString()
+  });
+});
+
+app.post("/submit", function(req, res) {
+  var cast = req.body.actors;
+  var stringCast = cast.split(",")
+  var castArr = [cast];
+  var genres = req.body.genres;
+  var stringGenres = genres.split(",");
+  var reviewTest = req.body.review;
+  var newstr="";
+  var reviewArray = [];
+
+  for(var i=0; i<reviewTest.length; i++){
+    if(!( reviewTest[i]=='\n' || reviewTest[i] =='\r')){
+      newstr += reviewTest[i];
+    }
+    if(reviewTest[i] =='\r'){
+      console.log("here");
+      console.log(reviewTest[i]);
+      reviewArray.push(newstr);
+      newstr="";
+    }
+  }
+
+
+  const post = new Post({
+    title: req.body.postTitle,
+    mins: req.body.mins,
+    year: req.body.year,
+    genres: stringGenres,
+    director: req.body.director,
+    actors: stringCast,
+    plot: req.body.plot,
+    reviewDate: req.body.reviewDate,
+    review: reviewArray,
+    rating: req.body.rating,
+    postImg: req.body.postImg,
+    feedImg: req.body.feedImg
+  });
+  console.log("START");
+  console.log(cast);
+  console.log(stringCast);
+  console.log(reviewArray);
+  console.log("Date" + req.body.reviewDate);
+
+  console.log(post);
+  // post.save(function(err) {
+  //   if (!err) {
+  //     res.redirect("home");
+  //   }
+  // });
+
+
+  // post.save(function(err){
+  //   if (!err){
+  //       res.redirect("/");
+  //   }
+  // });
+});
+
+// app.post("/submit", function(req, res){
+//   console.log(req.body);
+//   const post = {
+//
+//   }
+//
+//   posts.push(post);
+//
+//
+//   res.redirect("/latest", posts);
+//
+//
+// })
+
+
+app.get("/posts/:postName", function(req, res) {
+  var requestedPostId = req.params.postName;
+  console.log("requestedPostId is " + requestedPostId);
+  Post.findOne({
+    _id: requestedPostId
+  }, function(err, foundPost) {
+    console.log(foundPost);
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundPost) {
+        console.log("found");
+        res.render("post", {
+          post: foundPost
+        });
+      } else {
+        console.log("Cannot find post");
+      }
+    }
+  });
+
+
+});
+
+
+
+// app.get("/posts/:postID", function(req, res) {
+//   const requestedPostId = req.params.postID;
+//   console.log(requestedPostId);
+//   Post.findOne({_id: requestedPostId}, function(err, foundPost){
+//     console.log(foundPost);
+//     if(err){
+//       console.log(err);
+//     }
+//
+//     else{
+//       if(foundPost){
+//         console.log("found");
+//         res.render("post", {post: foundPost});
+//       }
+//
+//       else{
+//         console.log("Cannot find post");
+//       }
+//     }
+//   });
+//
+//
+// });
 
 //     app.get("/posts/:postID", function(req, res){
 //
@@ -373,8 +414,11 @@ app.get("/list", function(req, res) {
 // });
 
 
+var cast = "Donald Pleasence, Jamie Lee Curtis, Nick Castle, P.J. Soles, Nancy Kyes";
+var castArr = cast.split(",");
+console.log(castArr);
 
 
-    app.listen(3000, function() {
-      console.log("Server is running on port 3000");
-    });
+app.listen(3000, function() {
+  console.log("Server is running on port 3000");
+});

@@ -1,6 +1,9 @@
 <%- include("partials/header"); -%>
 <%=date %>
+
+
 <div class="container content-box">
+
 
 
   <h1>Submit Review</h1>
@@ -10,7 +13,7 @@
     <div class="row">
       <div class="col-md-12">
 
-        <form action="/submit" method="post" id="commentform">
+        <form action="/submit" method="post">
           <div class="form-group">
             <label>Title</label>
             <input class="form-control" type="text" name="postTitle">
@@ -19,12 +22,12 @@
 
 
             <label for="">Time (in minutes)</label>
-            <input type="text" name="mins" value="">
+            <input type="number" name="mins" value="">
             <br>
 
             <label for="">Release Year</label>
             <div id="year" class="form-row">
-              <input type="text" placeholder="Year" name="year" id="year">
+              <input type="number" placeholder="Year" name="year" id="year">
             </div>
             <br>
 
@@ -35,73 +38,63 @@
             <br>
 
 
-            <label for="">Actors</label>
+            <label for="">Actors (separate with commas)</label>
             <div id="actors" class="form-row">
-              <input type="text" placeholder="Actors" name="actors" id="url">
+              <input type="text" placeholder="Actors" name="actors" >
             </div>
             <br>
 
-            <form action="/action_page.php">
-              <input type="checkbox" name="vehicle1" value="Bike">
-              <label for="vehicle1"> I have a bike</label><br>
-              <input type="checkbox" name="vehicle2" value="Car">
-              <label for="vehicle2"> I have a car</label><br>
-              <input type="checkbox" name="vehicle3" value="Boat" checked>
-              <label for="vehicle3"> I have a boat</label><br><br>
-              <input type="submit" value="Submit">
-            </form>
+            <!-- var cast = "Donald Pleasence, Jamie Lee Curtis, Nick Castle, P.J. Soles, Nancy Kyes";
+            var castArr = cast.split(",");
+            console.log(castArr); -->
 
-            <label for="">Genres</label>
-            <div id="actors" class="form-row">
-              <input type="text" placeholder="Actors" name="actors" id="url">
-            </div>
 
-            <form action="/action_page.php">
-              <input type="checkbox" name="vehicle1" value="Bike">
-              <label for="vehicle1"> I have a bike</label><br>
-              <input type="checkbox" name="vehicle2" value="Car">
-              <label for="vehicle2"> I have a car</label><br>
-              <input type="checkbox" name="vehicle3" value="Boat" checked>
-              <label for="vehicle3"> I have a boat</label><br><br>
-              <input type="submit" value="Submit">
-            </form>
+
+
+            <!-- Action, Adventure, Animation, Comedy, Crime, Documentary, Drama, Family,
+             Fantasy, History, Horror, Music, Mystery, Romance, Science Fiction, Thriller, TV Movie, War, Western -->
+
+             <label for="">Genres (separate with commas)</label>
+             <div id="genres" class="form-row">
+               <input type="text" placeholder="Genres" name="genres">
+             </div>
+             <br>
 
 
             <label for="">Review Date</label>
             <div id="reviewDate" class="form-row">
-              <input type="text" placeholder="Review Date" name="reviewDate" id="url">
-              <input type="date" id="start" name="trip-start" value=<%=date %> min="2018-01-01" max=<%=date %>>
+              <input type="date" id="reviewDate" name="reviewDate" min="2016-01-01" max=<%=date %>>
             </div>
 
             <label for="">Post image link</label>
             <div id="post-img" class="form-row">
-              <input type="text" placeholder="post img " name="postImg" id="url">
+              <input type="url" placeholder="post img " name="postImg" id="url">
             </div>
 
             <label for="">Feed image link</label>
             <div id="year" class="form-row">
-              <input type="text" placeholder="feed img" name="feedImg" id="url">
+              <input type="url" placeholder="feed img" name="feedImg" id="url">
             </div>
 
             <label for="">Plot</label>
             <div id="plot" class="form-row">
-              <textarea name="comment" placeholder="plot" id="comment"></textarea>
+              <textarea type=="text" name="plot" placeholder="plot"></textarea>
             </div>
 
-            <label for="">Review</label>
-            <div id="review" class="form-row">
+            <!-- <label for="">Review</label> -->
+            <!-- <div id="review" class="form-row">
               <textarea name="comment" placeholder="review" id="comment"></textarea>
-            </div>
+            </div> -->
 
             <label>Review</label>
-            <textarea class="form-control" name="postBody" rows="5" cols="30"></textarea>
+            <textarea class="form-control" name="review" rows="5" cols="30"></textarea>
 
             <div id="rating" class="form-row">
               <label for="">Rating (between 1 and 10)</label>
-              <input type="number" name="quantity" min="1" max="10">
+              <input type="number" name="rating" min="1" max="10">
             </div>
 
-            <a href="#"><input type="submit" name="submit" id="commentSubmit" value="Submit"></a>
+            <button class="btn btn-primary" type="submit" name="button">Publish</button>
 
 
           </div>
