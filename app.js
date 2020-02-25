@@ -8,7 +8,6 @@ const mongoose = require("mongoose");
 const app = express();
 const reviewTitle = "Default Title"
 const aboutContent = "Welcome to my Movie Blog. My name is Michael, and I'm the founder, CEO, and the movie critic behind this blog.";
-const homeStartingContent = "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({
@@ -166,19 +165,6 @@ Post.find(function(err, posts) {
   }
 });
 
-
-
-// Store:
-// Film name
-// Year
-// director
-// actors
-//Plot
-//Review Date
-// REVIEW:
-// Post Image
-// Feed Image
-
 app.use(express.static("images"));
 
 app.use(express.static('/public/images'));
@@ -189,17 +175,37 @@ app.get("/", function(req, res) {
       console.log(err);
     } else {
       res.render("home", {
-        startingContent: homeStartingContent,
         title: reviewTitle,
         posts: posts.sort(function(a, b) {
-          if (a.reviewDate.toLocaleDateString() < b.reviewDate.toLocaleDateString()) {
-            return -1;
+          if(a.reviewDate.getYear() < b.reviewDate.getYear()){
+            return -1
           }
-          if (a.reviewDate.toLocaleDateString() > b.reviewDate.toLocaleDateString()) {
-            return 1;
+
+          if(a.reviewDate.getYear() > b.reviewDate.getYear()){
+            return -1
           }
-          return 0;
-        }).reverse()
+
+          if(a.reviewDate.getYear() === b.reviewDate.getYear()){
+            if(a.reviewDate.getMonth() > b.reviewDate.getMonth()){
+              return 1
+            }
+            if(a.reviewDate.getMonth() < b.reviewDate.getMonth()){
+              return -1
+            }
+
+            if(a.reviewDate.getMonth() === b.reviewDate.getMonth()){
+              if(a.reviewDate.getDay() > b.reviewDate.getDay()){
+                return 1
+              }
+
+              if(a.reviewDate.getDay() < b.reviewDate.getDay()){
+                return 1
+              }
+
+              return 0;
+            }
+          }
+        })
       });
 
     }
@@ -214,6 +220,10 @@ app.get("/about", function(req, res) {
 
 app.get("/test", function(req, res) {
   res.render("test");
+});
+
+app.get("/test2", function(req, res) {
+  res.render("test2");
 });
 
 app.get("/list", function(req, res) {
@@ -234,6 +244,11 @@ app.get("/list", function(req, res) {
       });
     }
   });
+});
+
+app.get("/search", function(req, res){
+  res.render("search", req.body.search);
+
 });
 
 
@@ -373,6 +388,8 @@ app.get("/posts/:postName", function(req, res) {
 
 
 
+
+
 // app.get("/posts/:postID", function(req, res) {
 //   const requestedPostId = req.params.postID;
 //   console.log(requestedPostId);
@@ -412,11 +429,6 @@ app.get("/posts/:postName", function(req, res) {
 //   });
 //
 // });
-
-
-var cast = "Donald Pleasence, Jamie Lee Curtis, Nick Castle, P.J. Soles, Nancy Kyes";
-var castArr = cast.split(",");
-console.log(castArr);
 
 
 app.listen(3000, function() {
