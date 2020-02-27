@@ -72,6 +72,13 @@ textarea{
   width: 50%;
 }
 
+.about-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
 
 
 .center-cropped {
