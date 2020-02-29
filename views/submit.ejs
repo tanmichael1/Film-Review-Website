@@ -19,27 +19,28 @@
             <label for="">Time (in minutes)</label>
             <input type="number" name="mins" value="">
             <br>
+            <br>
 
             <label>Release Year</label>
             <input class="form-control" type="text" name="year">
             <br>
 
-            <label for="">Release Year</label>
+            <!-- <label for="">Release Year</label>
             <div id="year" class="form-row">
               <input type="number" placeholder="Year" name="year" id="year">
             </div>
-            <br>
+            <br> -->
 
             <label for="">Director</label>
             <div id=director class="form-row">
-              <input type="text" placeholder="Director" name="director" id="Director">
+              <input type="text" name="director" id="Director">
             </div>
             <br>
 
 
             <label for="">Actors (separate with commas)</label>
             <div id="actors" class="form-row">
-              <input type="text" placeholder="Actors" name="actors" >
+              <input type="text" name="actors" >
             </div>
             <br>
 
@@ -55,7 +56,7 @@
 
              <label for="">Genres (separate with commas)</label>
              <div id="genres" class="form-row">
-               <input type="text" placeholder="Genres" name="genres">
+               <input type="text" name="genres">
              </div>
              <br>
 
@@ -64,21 +65,25 @@
             <div id="reviewDate" class="form-row">
               <input type="date" id="reviewDate" name="reviewDate" min="2016-01-01" max=<%=date %>>
             </div>
+            <br>
 
             <label for="">Post image link</label>
             <div id="post-img" class="form-row">
-              <input type="url" placeholder="post img " name="postImg" id="url">
+              <input type="url" name="postImg" id="url">
             </div>
+            <br>
 
             <label for="">Feed image link</label>
             <div id="year" class="form-row">
-              <input type="url" placeholder="feed img" name="feedImg" id="url">
+              <input type="url" name="feedImg" id="url">
             </div>
+            <br>
 
             <label for="">Plot</label>
             <div id="plot" class="form-row">
-              <textarea type=="text" name="plot" placeholder="plot"></textarea>
+              <textarea type=="text" name="plot"></textarea>
             </div>
+            <br>
 
             <!-- <label for="">Review</label> -->
             <!-- <div id="review" class="form-row">
@@ -87,11 +92,13 @@
 
             <label>Review</label>
             <textarea class="form-control" name="review" rows="5" cols="30"></textarea>
+            <br>
 
             <div id="rating" class="form-row">
               <label for="">Rating (between 1 and 10)</label>
               <input type="number" name="rating" min="1" max="10">
             </div>
+            <br>
 
             <button class="btn btn-primary" type="submit" name="button">Publish</button>
 

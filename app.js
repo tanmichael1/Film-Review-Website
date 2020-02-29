@@ -340,11 +340,11 @@ app.post("/submit", function(req, res) {
   // });
 
 
-  // post.save(function(err){
-  //   if (!err){
-  //       res.redirect("/");
-  //   }
-  // });
+  post.save(function(err){
+    if (!err){
+        res.redirect("/");
+    }
+  });
 });
 
 // app.post("/submit", function(req, res){
