@@ -1,5 +1,9 @@
 //jshint esversion: 6
 
+/* nodemon app.js
+mongodb
+mongo */
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");

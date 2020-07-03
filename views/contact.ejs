@@ -1,36 +1,41 @@
 <%- include("partials/header"); -%>
 
+
 <div class="container content-box height">
 
-<h1>Contact</h1>
+  <h1 class="container content-box">Contact</h1>
 
-<p>
-I can be contacted via the Contact Form below, or, if that isn’t working, feel free to leave a comment in the comments section and I will get back to you.
-</p>
-<br>
+  <p class="container content-box">
+    I can be contacted via the Contact Form below, or, if that isn’t working, feel free to leave a comment in the comments section and I will get back to you.
+  </p>
+  <br>
 
-<div id='form'>
-  <div class="row">
-    <div class="col-md-12">
+  <div class="container content-box">
+    <div id='form'>
+      <div class="row">
+        <div class="col-md-12">
 
-      <form action="mailto:michaelrstan@gmail.com" method="POST" id="commentform">
+          <form name="form" action="mailto:michaelrstan@gmail.com" onsubmit="return validate()" method="POST" id="commentform">
 
-        <div id="comment-name" class="form-row">
-          <input type="text" placeholder="Name (required)" name="name" id="name">
+            <div id="comment-name" class="form-row">
+              <input required type="text" placeholder="Name (required)" name="name" id="name">
+            </div>
+            <div id="comment-email" class="form-row">
+              <input required type="text" placeholder="Email (will not be published) (required)" name="email" id="email">
+            </div>
+            <div id="comment-message" class="form-row">
+              <textarea required  name="comment" name="message" placeholder="Message" id="comment"></textarea>
+            </div>
+            <input type="submit" value="Submit Message">
+
+
+          </form>
+
         </div>
-        <div id="comment-email" class="form-row">
-          <input type="text" placeholder="Mail (will not be published) (required)" name="email" id="email">
-        </div>
-        <div id="comment-message" class="form-row">
-          <textarea name="comment" placeholder="Message" id="comment"></textarea>
-        </div>
-        <a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Message"></a>
-
-      </form>
-
+      </div>
     </div>
   </div>
-</div>
+
 </div>
 
 <%- include("partials/footer"); -%>
