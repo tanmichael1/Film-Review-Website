@@ -120,6 +120,9 @@ carousel-img2{
   margin: 0;
 }
 
+#admin-button{
+  float: right;
+}
 
 #loadMore {
     padding: 10px;
